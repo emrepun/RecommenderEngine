@@ -14,3 +14,9 @@ def clear(city):
 
     merged_city = " ".join(city_keywords)
     return merged_city
+
+for index, row in df.iterrows():
+    clear_desc = clear(row['description'])
+    df.at[index, 'description'] = clear_desc
+
+updated_dataset = df.to_csv('city_data_cleared.csv')
