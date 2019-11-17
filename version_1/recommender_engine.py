@@ -27,6 +27,7 @@ class RecommenderEngine:
 
         #get highest scored 5 cities.
         for i in sorted_scores:
+            #print index and score of the city.
             print(i[0], i[1])
             resultDF = resultDF.append({'city': df.iloc[i[0]]['city'], 'popularity': df.iloc[i[0]]['popularity'], 'description': df.iloc[i[0]]['description'], 'image': df.iloc[i[0]]['image']}, ignore_index=True)
             counter += 1
