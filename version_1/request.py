@@ -15,7 +15,7 @@ def get_top_5_city_names_out_of_json(json_string):
     max = len(list)
     i = 0
     while i < max:
-        result.append(list[i]['city'])
+        result.append((list[i]['city'], list[i]['score']))
         i += 1
 
     return result
