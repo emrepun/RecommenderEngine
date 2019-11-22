@@ -8,6 +8,11 @@ class RecommenderEngine:
     def __init__(self):
         print("engine initialized")
 
+    def calculate_final_score(cs, r):
+        amount = (cs / 100) * r
+
+        return cs + amount
+
     def get_recommendations(keywords):
 
         df = pd.read_csv('city_data_cleared.csv')
