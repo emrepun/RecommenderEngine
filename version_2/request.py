@@ -9,6 +9,9 @@ def get_recommendations(keywords):
     result = RecommenderEngine.get_recommendations(keywords)
     return result
 
+def get_recommendations_include_rating(keywords):
+    return RecommenderEngine.get_recommendations_include_rating(keywords)
+
 def get_top_5_city_names_out_of_json(json_string):
     list = json.loads(json_string)
     result = []
@@ -31,4 +34,19 @@ print("#################")
 top_5_party_cities = get_recommendations(nightlife_keywords)
 city_names_for_party = get_top_5_city_names_out_of_json(top_5_party_cities)
 print(city_names_for_party)
+print("#################")
+
+# Version 2 requests are below:
+
+top_5_cultural_with_rating = get_recommendations_include_rating(culture_keywords)
+city_names_for_cultural_rating = get_top_5_city_names_out_of_json(top_5_cultural_with_rating)
+print(city_names_for_cultural_rating)
+print("#################")
+top_5_summer_with_rating = get_recommendations_include_rating(beach_n_sun_keywords)
+city_names_for_summer_rating = get_top_5_city_names_out_of_json(top_5_summer_with_rating)
+print(city_names_for_summer_rating)
+print("#################")
+top_5_party_with_rating = get_recommendations_include_rating(nightlife_keywords)
+city_names_for_party_rating = get_top_5_city_names_out_of_json(top_5_party_with_rating)
+print(city_names_for_party_rating)
 print("#################")
