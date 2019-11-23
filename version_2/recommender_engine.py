@@ -14,6 +14,7 @@ class RecommenderEngine:
 
         return cs + amount
 
+    # Version-2
     def get_recommendations_include_rating(keywords):
         df = pd.read_csv('city_data_cleared.csv')
 
@@ -51,6 +52,7 @@ class RecommenderEngine:
         json_result = json.dumps(resultDF.to_dict('records'))
         return json_result
 
+    #Version-1
     def get_recommendations(keywords):
 
         df = pd.read_csv('city_data_cleared.csv')
