@@ -12,6 +12,9 @@ def get_recommendations(keywords):
 def get_recommendations_include_rating(keywords):
     return RecommenderEngine.get_recommendations_include_rating(keywords)
 
+def get_recommendations_include_rating_count_threshold(keywords):
+    return RecommenderEngine.get_recommendations_include_rating_count_threshold(keywords)
+
 def get_top_5_city_names_out_of_json(json_string):
     list = json.loads(json_string)
     result = []
@@ -49,4 +52,19 @@ print("#################")
 top_5_party_with_rating = get_recommendations_include_rating(nightlife_keywords)
 city_names_for_party_rating = get_top_5_city_names_out_of_json(top_5_party_with_rating)
 print(city_names_for_party_rating)
+print("#################")
+
+# Version 3 requests are below:
+
+top_5_cultural_with_rating_count_threshold = get_recommendations_include_rating_count_threshold(culture_keywords)
+city_names_for_cultural_rating_count_threshold = get_top_5_city_names_out_of_json(top_5_cultural_with_rating_count_threshold)
+print(city_names_for_cultural_rating_count_threshold)
+print("#################")
+top_5_summer_with_rating_count_threshold = get_recommendations_include_rating_count_threshold(beach_n_sun_keywords)
+city_names_for_summer_rating_count_threshold = get_top_5_city_names_out_of_json(top_5_summer_with_rating_count_threshold)
+print(city_names_for_summer_rating_count_threshold)
+print("#################")
+top_5_party_with_rating_count_threshold = get_recommendations_include_rating_count_threshold(nightlife_keywords)
+city_names_for_party_rating_count_threshold = get_top_5_city_names_out_of_json(top_5_party_with_rating_count_threshold)
+print(city_names_for_party_rating_count_threshold)
 print("#################")
