@@ -15,6 +15,9 @@ def get_recommendations_include_rating(keywords):
 def get_recommendations_include_rating_count_threshold(keywords):
     return RecommenderEngine.get_recommendations_include_rating_count_threshold(keywords)
 
+def get_recommendations_include_rating_count_threshold_positive_negative_reviews(keywords):
+    return RecommenderEngine.get_recommendations_include_rating_count_threshold_positive_negative_reviews(keywords)
+
 def get_top_5_city_names_out_of_json(json_string):
     list = json.loads(json_string)
     result = []
@@ -25,6 +28,8 @@ def get_top_5_city_names_out_of_json(json_string):
         i += 1
 
     return result
+
+# Version 1 requests are below:
 
 top_5_cultural_cities = get_recommendations(culture_keywords)
 city_names_for_cultural = get_top_5_city_names_out_of_json(top_5_cultural_cities)
@@ -67,4 +72,19 @@ print("#################")
 top_5_party_with_rating_count_threshold = get_recommendations_include_rating_count_threshold(nightlife_keywords)
 city_names_for_party_rating_count_threshold = get_top_5_city_names_out_of_json(top_5_party_with_rating_count_threshold)
 print(city_names_for_party_rating_count_threshold)
+print("#################")
+
+# Version 4 requests are below:
+
+top_5_cultural_with_rating_count_threshold_reviews = get_recommendations_include_rating_count_threshold_positive_negative_reviews(culture_keywords)
+city_names_for_cultural_rating_count_threshold_reviews = get_top_5_city_names_out_of_json(top_5_cultural_with_rating_count_threshold_reviews)
+print(city_names_for_cultural_rating_count_threshold_reviews)
+print("#################")
+top_5_summer_with_rating_count_threshold_reviews = get_recommendations_include_rating_count_threshold_positive_negative_reviews(beach_n_sun_keywords)
+city_names_for_summer_rating_count_threshold_reviews = get_top_5_city_names_out_of_json(top_5_summer_with_rating_count_threshold_reviews)
+print(city_names_for_summer_rating_count_threshold_reviews)
+print("#################")
+top_5_party_with_rating_count_threshold_reviews = get_recommendations_include_rating_count_threshold_positive_negative_reviews(nightlife_keywords)
+city_names_for_party_rating_count_threshold_reviews = get_top_5_city_names_out_of_json(top_5_party_with_rating_count_threshold_reviews)
+print(city_names_for_party_rating_count_threshold_reviews)
 print("#################")
